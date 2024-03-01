@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 import Image from "next/image";
@@ -25,7 +26,7 @@ const SignIn = () => {
           <div className="mt-12 flex flex-col items-center">
             <h1 className=" text-lg xl:text-2xl flex items-center gap-2">
               <LuPartyPopper className="w-10 h-10  " />
-              <div>You 're back !!</div>
+              <div>You re back !!</div>
             </h1>
             <div className="w-full flex-1 mt-8">
               <div className="mx-auto max-w-xs">
