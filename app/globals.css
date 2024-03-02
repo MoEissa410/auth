@@ -1,14 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @layer utilities {
   .clip-polygon {
     clip-path: polygon(25% 1%, 84% 13%, 98% 77%, 26% 100%, 0 48%);
   }
+  .translate-x-custom {
+    transform: translateX(-100%);
+  }
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
   margin: 0;

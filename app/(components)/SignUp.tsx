@@ -6,13 +6,13 @@ import { FaGithub } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { CiLock } from "react-icons/ci";
-const SignIn = () => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [translateX, setTranslateX] = useState(false);
   return (
     <>
       <div className="  w-full flex flex-col gap-8">
-        <h1 className=" text-center text-3xl font-bold">Sign In</h1>
+        <h1 className=" text-center text-3xl font-bold">Sign Up</h1>
         <div className=" flex justify-evenly items-center">
           <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
             <AiOutlineGooglePlus />
@@ -50,12 +50,22 @@ const SignIn = () => {
               onClick={() => setShowPassword(!showPassword)}
             />
           </div>
-          <p className=" cursor-pointer">forget password</p>
+          <div className="relative md:max-w-[340px] w-[85%] flex justify-end items-center">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="repeat password"
+              className="w-full  border-2 rounded-lg py-1 px-1 bg-gray-100 text-black focus:ring-2 focus:ring-purble focus:outline-none duration-150"
+            />
+            <CiLock
+              className=" text-purble cursor-pointer absolute right-3 hover:text-xl duration-300 "
+              onClick={() => setShowPassword(!showPassword)}
+            />
+          </div>
           <button
             type="submit"
             className="bg-purble  border rounded-lg px-10 py-1 text-base font-[50px] text-white  hover:bg-[#5e33c2] duration-200  mb-3"
           >
-            SIGN IN
+            SIGN UP
           </button>
         </form>
       </div>
@@ -63,4 +73,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

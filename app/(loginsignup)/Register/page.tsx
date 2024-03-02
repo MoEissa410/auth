@@ -5,7 +5,7 @@ import cat from "../../../public/cat.jpg";
 import Image from "next/image";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { VscLock } from "react-icons/vsc";
-import SignUp from "@/app/(components)/SiginUp";
+import SignUp from "@/app/(components)/SignUp";
 
 const Register = () => {
   return (
