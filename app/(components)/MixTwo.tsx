@@ -18,7 +18,7 @@ const MixTwo = () => {
         <div
           className={`md:w-1/2 w-full  flex flex-col justify-center items-center gap-8 duration-700 ${
             translateX
-              ? " md:translate-x-[100%] md:translate-y-0 translate-y-[135px] "
+              ? " md:translate-x-[100%] md:translate-y-0 translate-y-[135px] mb-1 "
               : ""
           }`}
         >
