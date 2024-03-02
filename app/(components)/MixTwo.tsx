@@ -18,7 +18,7 @@ const MixTwo = () => {
         <div
           className={`md:w-1/2 w-full  flex flex-col justify-center items-center gap-8 duration-700 ${
             translateX
-              ? " md:translate-x-[100%] md:translate-y-0 translate-y-[135px] mb-1 "
+              ? " md:translate-x-[100%] md:translate-y-0 translate-y-[135px] "
               : ""
           }`}
         >
@@ -44,7 +44,7 @@ const MixTwo = () => {
           <button
             onClick={() => setTranslateX(!translateX)}
             type="submit"
-            className="bg-purble border rounded-lg px-10 py-1 text-base font-[50px] hover:bg-[#5e33c2] duration-200  mb-3 "
+            className="bg-purble border rounded-lg px-10  text-base font-[50px] hover:bg-[#5e33c2] duration-200  mb-3 "
           >
             {translateX ? "SIGN IN " : "SIGN UP"}
           </button>
