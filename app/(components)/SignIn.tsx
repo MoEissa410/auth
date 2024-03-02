@@ -11,7 +11,7 @@ const SignIn = () => {
   const [translateX, setTranslateX] = useState(false);
   return (
     <>
-      <div className="  w-full flex flex-col gap-8">
+      <div className="  w-full flex flex-col gap-6">
         <h1 className=" text-center text-3xl font-bold pt-1">Sign In</h1>
         <div className=" flex justify-evenly items-center">
           <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
