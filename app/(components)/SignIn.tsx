@@ -12,7 +12,7 @@ const SignIn = () => {
   return (
     <>
       <div className="  w-full flex flex-col gap-8">
-        <h1 className=" text-center text-3xl font-bold">Sign In</h1>
+        <h1 className=" text-center text-3xl font-bold pt-1">Sign In</h1>
         <div className=" flex justify-evenly items-center">
           <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
             <AiOutlineGooglePlus />
@@ -29,7 +29,7 @@ const SignIn = () => {
         </div>
       </div>
       <div className="w-full">
-        <form className=" flex flex-col justify-center items-center gap-5 text-gray-500 font-mdeium mx-auto w-full ">
+        <form className=" flex flex-col justify-center items-center gap-4 text-gray-500 font-medium mx-auto w-full ">
           <p>or use your email password</p>
           <div className="relative md:max-w-[340px] w-[85%] flex justify-end items-center">
             <input

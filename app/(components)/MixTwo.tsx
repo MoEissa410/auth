@@ -29,7 +29,7 @@ const MixTwo = () => {
         <div
           className={` md:w-1/2 w-full flex tra flex-col md:gap-8 gap-4 items-center justify-center rounded-2xl text-center bg-purble  text-white duration-700 ${
             translateX
-              ? " md:translate-x-custom translate-x-0 md:translate-y-0 translate-y-[-390px] rounded-bl-[30%] rounded-br-[30%]  md:rounded-tr-[40%] md:rounded-2xl md:rounded-br-[40%]"
+              ? " md:translate-x-custom translate-x-0 md:translate-y-0 translate-y-[-410px] rounded-bl-[30%] rounded-br-[30%]  md:rounded-tr-[40%] md:rounded-2xl md:rounded-br-[40%]"
               : " rounded-tl-[30%] rounded-tr-[30%]  md:rounded-tl-[40%] md:rounded-2xl md:rounded-bl-[40%]"
           }`}
         >
