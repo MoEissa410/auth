@@ -7,12 +7,7 @@ import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 const Home = () => {
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect("/api/auth/signin?callbackUrl=/ClientMember");
-    },
-  });
+  const { data: session } = useSession();
   if (!session) {
     return "no data";
   }
