@@ -1,15 +1,18 @@
-import { getServerSession } from "next-auth";
-import { options } from "./api/auth/[...nextauth]/options";
+"use client";
+// import { getServerSession } from "next-auth";
+// import { options } from "./api/auth/[...nextauth]/options";
 
 import React from "react";
 import { redirect } from "next/navigation";
+import { useSession } from "next-auth/react";
 
-const Home = async () => {
-  const session = await getServerSession(options);
-
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/Member");
-  }
+const Home = () => {
+  const { data: session } = useSession({
+    required: true,
+    onUnauthenticated() {
+      redirect("/api/auth/signin?callbackUrl=/ClientMember");
+    },
+  });
   if (!session) {
     return "no data";
   }
@@ -17,7 +20,6 @@ const Home = async () => {
     <div>
       <h1>Member Server Session</h1>
       <p>{session?.user?.email}</p>
-      <p>{session?.user?.role}</p>
     </div>
   );
 };
