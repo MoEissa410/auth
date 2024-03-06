@@ -6,7 +6,6 @@ import { CiLock } from "react-icons/ci";
 import SignOptions from "./SignOptions";
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [translateX, setTranslateX] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
