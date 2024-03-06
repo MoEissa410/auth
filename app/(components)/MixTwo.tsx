@@ -1,16 +1,9 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineGooglePlus } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { RiLinkedinFill } from "react-icons/ri";
-import { HiOutlineMailOpen } from "react-icons/hi";
-import { CiLock } from "react-icons/ci";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { X } from "@/types";
 const MixTwo = ({ x }: X) => {
-  const [showPassword, setShowPassword] = useState(false);
   const [translateX, setTranslateX] = useState(x);
 
   return (
