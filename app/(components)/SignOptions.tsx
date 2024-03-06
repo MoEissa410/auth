@@ -16,7 +16,7 @@ const SignOptions = () => {
           className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer"
           type="submit"
           onClick={() => {
-            signIn("google", { callbackUrl: "http://localhost:3000/" });
+            signIn("google");
           }}
         >
           <AiOutlineGooglePlus />

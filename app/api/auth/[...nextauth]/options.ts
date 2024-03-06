@@ -59,6 +59,8 @@ export const options = {
       clientSecret: process.env.GOOGLE_Secret!,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+
   callbacks: {
     async jwt({ token, user }: any) {
       if (user) token.role = user.role;
