@@ -1,41 +1,40 @@
 "use client";
 import { useState } from "react";
-import { AiOutlineGooglePlus } from "react-icons/ai";
-import { FaFacebookF } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { RiLinkedinFill } from "react-icons/ri";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { CiLock } from "react-icons/ci";
+import SignOptions from "./SignOptions";
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [translateX, setTranslateX] = useState(false);
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  //
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+  //
+  const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
   return (
     <>
-      <div className="  w-full flex flex-col gap-6">
-        <h1 className=" text-center text-3xl font-bold pt-1">Sign In</h1>
-        <div className=" flex justify-evenly items-center">
-          <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
-            <AiOutlineGooglePlus />
-          </div>
-          <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
-            <FaFacebookF />
-          </div>
-          <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
-            <FaGithub />
-          </div>
-          <div className="border rounded-lg w-11 h-11 flex items-center justify-center hover:bg-purble hover:text-white duration-300 cursor-pointer">
-            <RiLinkedinFill />
-          </div>
-        </div>
-      </div>
+      <SignOptions />
       <div className="w-full">
-        <form className=" flex flex-col justify-center items-center gap-4 text-gray-500 font-medium mx-auto w-full ">
+        <form
+          className=" flex flex-col justify-center items-center gap-4 text-gray-500 font-medium mx-auto w-full "
+          onSubmit={handleForm}
+        >
           <p>or use your email password</p>
           <div className="relative md:max-w-[340px] w-[85%] flex justify-end items-center">
             <input
+              value={formData.email}
+              name="email"
               type="text"
               placeholder="email"
               className="w-full border-2 rounded-lg py-1 px-1 bg-gray-100 text-black focus:ring-2 focus:ring-purble focus:outline-none duration-150"
+              onChange={handleChange}
             />
             <HiOutlineMailOpen className="  text-purble  absolute right-3 " />
           </div>
@@ -44,6 +43,9 @@ const SignIn = () => {
               type={showPassword ? "text" : "password"}
               placeholder="password"
               className="w-full  border-2 rounded-lg py-1 px-1 bg-gray-100 text-black focus:ring-2 focus:ring-purble focus:outline-none duration-150"
+              onChange={handleChange}
+              name="password"
+              value={formData.password}
             />
             <CiLock
               className=" text-purble cursor-pointer absolute right-3 hover:text-xl duration-300 "

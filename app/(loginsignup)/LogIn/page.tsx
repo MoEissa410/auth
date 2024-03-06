@@ -1,11 +1,16 @@
-import SignIn from "@/app/(components)/SignIn";
-import React from "react";
-
-const LogIn = () => {
+import MixTwo from "@/app/(components)/MixTwo";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+const LogIn = async () => {
+  const session = await getServerSession(options);
+  if (session) {
+    return redirect("/");
+  }
   return (
-    <div>
-      <SignIn />
-    </div>
+    <>
+      <MixTwo x={false} />
+    </>
   );
 };
 

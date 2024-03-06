@@ -8,9 +8,10 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { CiLock } from "react-icons/ci";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-const MixTwo = () => {
+import { X } from "@/types";
+const MixTwo = ({ x }: X) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [translateX, setTranslateX] = useState(false);
+  const [translateX, setTranslateX] = useState(x);
 
   return (
     <div className=" flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-200 to-skyblue">
