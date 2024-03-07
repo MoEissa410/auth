@@ -21,8 +21,8 @@ export const options = {
           id: userId,
         };
       },
-      clientId: process.env.FACEBOOK_CLIENT_ID as string,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string,
+      clientId: process.env.FACEBOOK_CLIENT_ID!,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
     }),
     GitHubProvider({
       profile(profile) {
@@ -41,8 +41,8 @@ export const options = {
           id: userId,
         };
       },
-      clientId: process.env.GITHUB_ID as string,
-      clientSecret: process.env.GITHUB_Secret as string,
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_Secret!,
     }),
     GoogleProvider({
       profile(profile) {
@@ -55,11 +55,11 @@ export const options = {
           role: userRole,
         };
       },
-      clientId: process.env.GOOGLE_ID as string,
-      clientSecret: process.env.GOOGLE_Secret as string,
+      clientId: process.env.GOOGLE_ID!,
+      clientSecret: process.env.GOOGLE_Secret!,
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET as string,
+  secret: process.env.NEXTAUTH_SECRET,
 
   callbacks: {
     async jwt({ token, user }: any) {
