@@ -70,5 +70,4 @@ export const options = {
       return session;
     },
   },
-  secret: process.env.NEXTAUTH_SECRET,
 };
