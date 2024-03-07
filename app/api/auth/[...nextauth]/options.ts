@@ -4,26 +4,26 @@ import FacebookProvider from "next-auth/providers/facebook";
 
 export const options = {
   providers: [
-    FacebookProvider({
-      profile(profile) {
-        console.log("Profile facebook: ", profile);
+    // FacebookProvider({
+    //   profile(profile) {
+    //     console.log("Profile facebook: ", profile);
 
-        let userRole = "facebook User";
-        if (profile?.email === "moeissa410@gmail.com") {
-          userRole = "admin";
-        }
-        //
-        const userId: string = String(profile?.id);
+    //     let userRole = "facebook User";
+    //     if (profile?.email === "moeissa410@gmail.com") {
+    //       userRole = "admin";
+    //     }
+    //     //
+    //     const userId: string = String(profile?.id);
 
-        return {
-          ...profile,
-          role: userRole,
-          id: userId,
-        };
-      },
-      clientId: process.env.FACEBOOK_CLIENT_ID!,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
-    }),
+    //     return {
+    //       ...profile,
+    //       role: userRole,
+    //       id: userId,
+    //     };
+    //   },
+    //   clientId: process.env.FACEBOOK_CLIENT_ID!,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+    // }),
     GitHubProvider({
       profile(profile) {
         console.log("Profile GitHub: ", profile);
@@ -44,20 +44,20 @@ export const options = {
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_Secret!,
     }),
-    GoogleProvider({
-      profile(profile) {
-        console.log("Profile Google: ", profile);
+    // GoogleProvider({
+    //   profile(profile) {
+    //     console.log("Profile Google: ", profile);
 
-        let userRole = "Google User";
-        return {
-          ...profile,
-          id: profile.sub,
-          role: userRole,
-        };
-      },
-      clientId: process.env.GOOGLE_ID!,
-      clientSecret: process.env.GOOGLE_Secret!,
-    }),
+    //     let userRole = "Google User";
+    //     return {
+    //       ...profile,
+    //       id: profile.sub,
+    //       role: userRole,
+    //     };
+    //   },
+    //   clientId: process.env.GOOGLE_ID!,
+    //   clientSecret: process.env.GOOGLE_Secret!,
+    // }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
 
